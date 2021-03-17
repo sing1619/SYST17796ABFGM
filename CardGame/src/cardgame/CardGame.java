@@ -18,23 +18,13 @@ public class CardGame {
 
         Scanner input = new Scanner(System.in);
 
-        //create an array to hold 7 cards
-        Card[] hand = new Card[7];
-
         Value[] cardValues = Value.values();
 
         Suit[] cardSuits = Suit.values();
 
         //we will use Random to generate random numbers
-        Random random = new Random();
-
-        for (int i = 0; i < hand.length; i++) {
-            Value value = cardValues[random.nextInt(cardValues.length)];
-            Suit suit = cardSuits[random.nextInt(cardSuits.length)];
-
-            Card card = new Card(value, suit);
-            hand[i] = card;
-        }
+        Card[] hand = CardHandGenerator.generateHand(7, cardValues, cardSuits);
+        
         // print them out debugging purposes
         System.out.println("Here are the cards in the hand");
         for (Card card : hand) {
