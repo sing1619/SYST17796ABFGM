@@ -7,6 +7,7 @@ public class Chair {
     private String color;
     private double size;
     private double price;
+    private int r;
 
     
     public Chair(String name,String design, String color, double size, double price){
